@@ -1,0 +1,198 @@
+{
+  "results": {
+    "netflix": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3b/93/db/3b93db5a-6443-6bee-be15-8ce20e51593c/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-0-85-220.png/512x512bb.jpg",
+    "spotify": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/50/43/1b/50431b24-3dab-2ee3-5b1a-1a2639d44193/AppIcon-0-0-1x_U007epad-0-1-0-0-sRGB-85-220.png/512x512bb.jpg",
+    "disneyplus": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/87/c2/60/87c260fd-ad0c-6031-3e4d-5bf61344756b/AppIcon-0-0-1x_U007emarketing-0-8-0-0-0-85-220.png/512x512bb.jpg",
+    "hbomax": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/99/cb/07/99cb07a2-bb60-6e02-3c16-2bb7c4dacfae/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg",
+    "tinder": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/aa/90/8a/aa908acc-c8e1-4f3e-985b-8b7b570649b4/AppIcon-BrandFlame-0-0-1x_U007ephone-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg",
+    "instagram": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c3/c1/dc/c3c1dcd8-7f07-0ec0-c901-7487134a98ad/Prod-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+    "facebook": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7f/72/b7/7f72b76a-5865-3da5-8dc3-71a2b75551e9/Icon-Production-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+    "threads": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a5/62/fb/a562fbb2-737f-7a1f-7089-ca03bae9157b/Prod-0-0-1x_U007ephone-0-0-0-1-0-0-P3-85-220.png/512x512bb.jpg",
+    "xtwitter": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c8/a4/ff/c8a4ffb6-5efa-2202-61bb-d727ff3497a6/ProductionAppIcon-0-0-1x_U007emarketing-0-8-0-0-0-85-220.png/512x512bb.jpg",
+    "linkedin": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d2/96/00/d2960011-6749-b2ef-aa11-1a4354c678b1/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "pinterest": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/25/4d/21/254d21dc-d83a-83af-cfb7-b161188c34fe/AppIcon-0-0-1x_U007epad-0-1-0-0-0-85-220.png/512x512bb.jpg",
+    "snapchat": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d9/97/af/d997af48-2ebd-226c-81e0-e0d9534b5dd0/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+    "chatgpt": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/af/5b/dc/af5bdcf7-7eb9-b981-88b3-1014de5b987a/AppIcon-0-0-1x_U007epad-0-0-0-1-0-P3-85-220.png/512x512bb.jpg",
+    "claude": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/88/15/cc/8815cc45-efb1-5468-97b7-e403dab217d9/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "googlegemini": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/47/8b/0f/478b0fdc-c6b5-6103-ee35-13385fcce290/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-85-220.png/512x512bb.jpg",
+    "duolingo": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ae/1d/22/ae1d22bd-8da1-733d-3179-c694e51a17b5/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "strava": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7f/4f/80/7f4f80b8-7251-3299-d561-733965ab213b/AppIcon-Primary-0-0-1x_U007ephone-0-1-0-0-sRGB-85-220.png/512x512bb.jpg",
+    "paypal": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/90/06/94/900694e8-378d-c4ed-7922-82fe3eb8c245/AppIcon-0-0-1x_U007ephone-0-1-0-GLES2_U002c0-85-220.png/512x512bb.jpg",
+    "revolut": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e8/e3/fd/e8e3fdcd-2349-9b90-2c57-fbc4e294aa9d/AppIcon-Production-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "uber": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/80/6a/8b/806a8b44-511d-77dc-856d-f8b3a9642483/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/512x512bb.jpg",
+    "bolt": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/97/29/6a/97296a77-9d17-22db-8213-7756704d56b0/AppIcon-1x_U007emarketing-0-6-0-85-220-0.png/512x512bb.jpg",
+    "airbnb": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7f/5f/2a/7f5f2a96-c3b5-f4b3-f9e9-e3dfc582742a/AppIcon-0-0-1x_U007epad-0-1-0-0-0-85-220.png/512x512bb.jpg",
+    "booking": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/9b/9f/24/9b9f2472-6a51-ad19-c189-7e6787f279e5/AppIcon-0-0-1x_U007epad-0-9-0-85-220.jpeg/512x512bb.jpg",
+    "capcut": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/83/a5/99/83a599e7-c367-ab65-11fc-721737bfa4fc/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "canva": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/72/d5/27/72d527c8-c8d8-e3d4-0530-2ce8a0da8111/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/512x512bb.jpg",
+    "lightroom": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/69/4e/aa/694eaa05-233a-ef0f-8316-f32856e3a81e/AppIcon-0-1x_U007ephone-0-1-0-0-85-220-0.png/512x512bb.jpg",
+    "photoshop": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1b/d5/83/1bd5839c-5152-437e-bc2e-bdf5d282b293/AppIcon-0-0-1x_U007epad-0-1-0-0-85-220.png/512x512bb.jpg",
+    "minecraft": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5d/3c/da/5d3cdaf9-d69e-184d-e0a2-9d046df0e30e/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/512x512bb.jpg",
+    "stardewvalley": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0e/df/12/0edf1230-3f6e-fbb3-7f72-f2aa844d100a/AppIcons-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "terraria": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/12/1b/e8/121be88a-adf0-6fb1-60bc-19cc9c156a11/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "geometrydash": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5a/d5/97/5ad5971d-b8ea-d82f-415f-f69be6bde65c/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/512x512bb.jpg",
+    "plagueinc": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/50/38/66/5038669a-f38e-c7af-c160-5ee72242accb/AppIcon-0-0-1x_U007emarketing-0-8-0-0-sRGB-85-220.png/512x512bb.jpg",
+    "bloonstd6": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/51/35/de/5135de6a-3a09-8a28-e1cd-36f6b3778d42/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "balatro": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6d/d3/0c/6dd30caf-f830-22d5-ba44-448cdff0df30/iOS_AppIcon_Premium-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "monopoly": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/88/b9/92/88b9927e-e9cf-815e-8dac-741b91822bc4/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "gtasanandreas": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/02/f2/c002f295-cf73-0278-8e73-d8d1f9e7a9af/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
+    "wreckfest": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/58/e1/47/58e14799-ab44-4024-e7fd-ef22ec22a8d7/AppIcon-0-0-1x_U007epad-0-10-0-85-220.png/512x512bb.jpg",
+    "slaythespire": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/91/0c/92/910c920a-0ab6-1939-e297-083995b640c7/AppIcon-1x_U007emarketing-0-11-0-0-85-220-0.png/512x512bb.jpg",
+    "dontstarve": "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/03/29/5e/03295e4c-5637-9419-83e5-e9939e90370c/Normal_Icon-1x_U007emarketing-0-10-0-85-220.png/512x512bb.jpg",
+    "northgard": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fc/26/3b/fc263bdd-ddf7-3b55-62ba-8cb35fbbcf15/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
+    "deadcells": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/01/10/c5/0110c5c6-01c0-8858-d466-8a44c585a6f1/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "civilization6": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7a/58/b2/7a58b274-5c46-f16a-6054-5917b28d8cee/AppIcon-1x_U007emarketing-0-7-0-85-220-0.jpeg/512x512bb.jpg",
+    "divinityoriginalsin2": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/83/56/92/835692aa-6271-341f-946b-4a7527698bcf/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg",
+    "kingdomtwocrowns": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bd/dd/b8/bdddb8c9-59f7-b54f-53ad-1a7c05c41206/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "theescapists2": "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/a5/17/fe/a517fe3f-20e2-5acb-cba9-eab4d604cf16/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-6.png/512x512bb.jpg",
+    "thiswarofmine": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/89/0f/06/890f065c-f242-d12b-c833-407119d67c3f/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
+    "monumentvalley": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/21/8e/d8/218ed8a3-c616-9ec7-419e-368073b9deb7/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "monumentvalley2": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ee/cb/18/eecb1846-3d87-5489-0078-43c13763aa1b/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "spongebob": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/54/eb/43/54eb4316-92ba-5e6e-6c15-2b2f401bfb3a/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "farmingsimulator": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/36/88/d1/3688d17b-751f-1087-5c0e-6e95684f0291/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/512x512bb.jpg",
+    "oceanhorn": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/44/a2/8d/44a28d87-51f9-f06f-2fbe-80188da12f16/AppIcon-0-0-1x_U007emarketing-0-4-85-220.png/512x512bb.jpg",
+    "sberbank": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b6/20/95/b6209524-80c6-9cd8-68ee-c6574f0f6cdf/AppIcon-0-1x_U007epad-0-1-85-220-0.png/512x512bb.jpg",
+    "tbank": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3d/8c/1f/3d8c1fc0-5d5c-ac33-1e89-e1deb472e868/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+    "vtb": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/27/a3/2e/27a32ef9-c713-5b80-d127-85ff489b64b4/AppIcon-0-0-1x_U007emarketing-0-6-0-sRGB-85-220.png/512x512bb.jpg",
+    "alfabank": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/89/78/80/89788050-2622-af0a-b276-9da8a1e8f755/AppIcon-0-0-1x_U007emarketing-0-7-0-sRGB-85-220.png/512x512bb.jpg",
+    "gazprombank": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e9/20/11/e9201177-ff4e-f291-7f36-5579f2b38916/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
+    "rosselkhozbank": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7f/29/d7/7f29d739-289a-95c2-d073-ea72e65e4ca3/raif-icon-0-0-1x_U007epad-0-1-0-0-sRGB-GLES2_U002c0-85-220.png/512x512bb.jpg",
+    "sovcombank": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5f/53/42/5f53423c-8559-101c-e8b2-339df06d932a/AppIcon-0-1x_U007ephone-0-1-85-220-0.png/512x512bb.jpg",
+    "psb": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e0/3a/a1/e03aa1b6-0ed5-1755-b59e-6ed65d7b5988/AppIcon-1x_U007emarketing-0-0-0-11-0-0-85-220-0.png/512x512bb.jpg",
+    "otkritie": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5f/53/42/5f53423c-8559-101c-e8b2-339df06d932a/AppIcon-0-1x_U007ephone-0-1-85-220-0.png/512x512bb.jpg",
+    "raiffeisenbank": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7f/29/d7/7f29d739-289a-95c2-d073-ea72e65e4ca3/raif-icon-0-0-1x_U007epad-0-1-0-0-sRGB-GLES2_U002c0-85-220.png/512x512bb.jpg",
+    "mkb": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/19/82/48198257-b87b-9ccc-664d-3f04910a0853/AppIcon-0-0-1x_U007emarketing-0-5-0-85-220.png/512x512bb.jpg",
+    "rosbank": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7f/29/d7/7f29d739-289a-95c2-d073-ea72e65e4ca3/raif-icon-0-0-1x_U007epad-0-1-0-0-sRGB-GLES2_U002c0-85-220.png/512x512bb.jpg",
+    "uralsib": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/42/8d/74/428d7457-a415-c57c-bbd7-818f8aba6c7c/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "bankspb": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6d/38/9e/6d389e23-f718-8243-2f74-4d49dfec9c7f/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.jpeg/512x512bb.jpg",
+    "akbars": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5f/53/42/5f53423c-8559-101c-e8b2-339df06d932a/AppIcon-0-1x_U007ephone-0-1-85-220-0.png/512x512bb.jpg",
+    "zenit": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0c/73/6a/0c736a03-0ceb-29f2-1601-d4d1e8ee5e1e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
+    "yumoney": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3d/8c/1f/3d8c1fc0-5d5c-ac33-1e89-e1deb472e868/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+    "qiwi": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d4/d4/ad/d4d4ade8-b160-747d-107f-7d34a96db7b8/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "mirpay": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3d/8c/1f/3d8c1fc0-5d5c-ac33-1e89-e1deb472e868/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+    "tocabocarworld": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f9/9a/c1/f99ac15b-9fcc-555d-1e5a-638bca7659de/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
+    "tocalifework": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f9/9a/c1/f99ac15b-9fcc-555d-1e5a-638bca7659de/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
+    "migatownworld": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/77/d3/f7/77d3f702-7b12-6eaf-b917-cda390e7fe38/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "migatownpets": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3f/55/44/3f55448a-278a-bf59-bf10-9281300530b7/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "migatownvacation": "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/f6/80/6e/f6806eb9-8c4c-8eff-bcfb-d5e02b314bb7/AppIcon-0-0-1x_U007emarketing-0-0-0-9-85-220-0.png/512x512bb.jpg",
+    "migatownschool": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/15/18/23/151823b5-5ca6-9798-c489-fbd51eb98daf/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "drpandatown": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6a/20/0b/6a200b0f-29a8-df02-4578-008ee4def5b9/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "drpandatowntales": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6a/20/0b/6a200b0f-29a8-df02-4578-008ee4def5b9/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "pepihouse": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cc/0e/83/cc0e83d3-da98-271c-4f77-e076f4cc8eae/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "pepisuperstores": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/51/3f/1a/513f1a21-85ad-a5df-42e9-e1b825108d72/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "pepiwonderworld": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/54/f3/ac/54f3ac41-4e40-43ef-1acb-8802ba7bc5a5/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "pepihospital": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/da/b6/96/dab69609-13fd-a0c4-d624-2b97a124a6de/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "sagominiworld": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/06/3c/0a/063c0a18-2a2e-ebfa-69b8-ca70a7e4e2b8/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
+    "sagominischool": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a9/aa/0c/a9aa0c32-c120-1167-a4de-ef6c359cc1a3/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "sagominibigcity": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/06/3c/0a/063c0a18-2a2e-ebfa-69b8-ca70a7e4e2b8/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
+    "avatarworld": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b2/c7/de/b2c7de70-bd3c-3368-4f94-f8bd6d1ba8cb/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "avatarworldcitylife": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b2/c7/de/b2c7de70-bd3c-3368-4f94-f8bd6d1ba8cb/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "moy7": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/27/f7/74/27f774f0-bf4c-5e49-2121-7a3aba672dd5/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
+    "mycitylondon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2d/b0/d1/2db0d18d-76d4-d266-70cc-583da1118828/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
+    "mycityhome": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/84/63/b3/8463b326-784e-54f9-b9ac-0bfa7cc8818a/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "mycitymansion": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a3/7a/98/a37a9858-96a7-14f3-51c9-5af3e46454a4/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "mytownschool": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d1/ee/33/d1ee337f-c8a4-cbb6-98ba-9ea8d86b88ec/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "mytownairport": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/22/85/60/2285600f-4047-90ee-081a-77f3bfa4154a/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "mytownhotel": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/31/6f/2d/316f2d3b-b0ee-43a5-5c8a-315c8eb80e45/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "cupcat": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/80/c0/4f/80c04f12-26f6-a00b-3eb6-2366ff631946/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg"
+  },
+  "mismatches": [
+    {
+      "key": "xtwitter",
+      "ourTitle": "X (Twitter)",
+      "itunesName": "X",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c8/a4/ff/c8a4ffb6-5efa-2202-61bb-d727ff3497a6/ProductionAppIcon-0-0-1x_U007emarketing-0-8-0-0-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "key": "sberbank",
+      "ourTitle": "СберБанк Онлайн",
+      "itunesName": "Госуслуги",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b6/20/95/b6209524-80c6-9cd8-68ee-c6574f0f6cdf/AppIcon-0-1x_U007epad-0-1-85-220-0.png/512x512bb.jpg"
+    },
+    {
+      "key": "tbank",
+      "ourTitle": "Т-Банк: дебетовые карты",
+      "itunesName": "Яндекс Пэй",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3d/8c/1f/3d8c1fc0-5d5c-ac33-1e89-e1deb472e868/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "key": "alfabank",
+      "ourTitle": "Альфа-Банк: Альфа-Онлайн",
+      "itunesName": "Alfa by Bank Alfalah",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/89/78/80/89788050-2622-af0a-b276-9da8a1e8f755/AppIcon-0-0-1x_U007emarketing-0-7-0-sRGB-85-220.png/512x512bb.jpg"
+    },
+    {
+      "key": "psb",
+      "ourTitle": "Промсвязьбанк: ПСБ Банк",
+      "itunesName": "PSBank.pl",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e0/3a/a1/e03aa1b6-0ed5-1755-b59e-6ed65d7b5988/AppIcon-1x_U007emarketing-0-0-0-11-0-0-85-220-0.png/512x512bb.jpg"
+    },
+    {
+      "key": "uralsib",
+      "ourTitle": "Уралсиб Банк Онлайн",
+      "itunesName": "Быстрый займ на карту",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/42/8d/74/428d7457-a415-c57c-bbd7-818f8aba6c7c/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "key": "bankspb",
+      "ourTitle": "Банк Санкт-Петербург",
+      "itunesName": "BSB-Bank",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6d/38/9e/6d389e23-f718-8243-2f74-4d49dfec9c7f/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.jpeg/512x512bb.jpg"
+    },
+    {
+      "key": "zenit",
+      "ourTitle": "Зенит Онлайн",
+      "itunesName": "Zenith Bank eaZymoney",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0c/73/6a/0c736a03-0ceb-29f2-1601-d4d1e8ee5e1e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "key": "yumoney",
+      "ourTitle": "ЮMoney — кошелёк и карта",
+      "itunesName": "Яндекс Пэй",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3d/8c/1f/3d8c1fc0-5d5c-ac33-1e89-e1deb472e868/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "key": "qiwi",
+      "ourTitle": "QIWI: оплата и переводы",
+      "itunesName": "Qplus — электронный кошелёк",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d4/d4/ad/d4d4ade8-b160-747d-107f-7d34a96db7b8/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "key": "mirpay",
+      "ourTitle": "Мир Pay",
+      "itunesName": "Яндекс Пэй",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3d/8c/1f/3d8c1fc0-5d5c-ac33-1e89-e1deb472e868/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "key": "moy7",
+      "ourTitle": "Мой виртуальный питомец Мой 7",
+      "itunesName": "My Talking Angela",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/27/f7/74/27f774f0-bf4c-5e49-2121-7a3aba672dd5/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "key": "mycityparis",
+      "issue": "not found",
+      "ourTitle": "My City : Paris"
+    },
+    {
+      "key": "mycitynewyork",
+      "issue": "not found",
+      "ourTitle": "My City : New York"
+    },
+    {
+      "key": "mycityboatadventure",
+      "issue": "not found",
+      "ourTitle": "My City : Boat Adventure"
+    },
+    {
+      "key": "mytownhome",
+      "issue": "not found",
+      "ourTitle": "My Town : Home Dollhouse"
+    },
+    {
+      "key": "mytownbestfriends",
+      "issue": "not found",
+      "ourTitle": "My Town : Best Friends' House"
+    }
+  ]
+}

